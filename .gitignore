@@ -1,0 +1,16 @@
+# Lua
+*.so
+*.dll
+*.dylib
+.cache/
+.luarc.json
+
+# Lazy-loading artifact
+plugin/*.lua~
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
