@@ -27,7 +27,7 @@ local function get_hl(c, opts)
     Exception       = { fg = c.red, style = S(styles, "keywords") },
 
     PreProc         = { fg = c.purple, style = S(styles, "imports") },
-    Include         = { fg = c.blue, style = S(styles, "keywords") },
+    Include         = { fg = c.cyan, style = S(styles, "keywords") },
     Define          = { fg = c.purple, style = S(styles, "imports") },
     Macro           = { fg = c.purple, style = S(styles, "imports") },
     PreCondit       = { fg = c.purple, style = S(styles, "imports") },
