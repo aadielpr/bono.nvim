@@ -8,7 +8,7 @@ A warm muted colorscheme for Neovim — cream (light) and espresso (dark) varian
 
 *Font: GeistMono · [Tmux config](https://github.com/aadielpr/.config/tree/main/tmux) · [Ghostty theme](https://github.com/aadielpr/.config/blob/main/ghostty/themes/bono-cream.conf) · [Pi theme](https://github.com/aadielpr/.config/blob/main/pi/themes/bono-cream.json)*
 
-Inspired by the structure of [token.nvim](https://github.com/your-username/token.nvim).
+Inspired by the structure of [token.nvim](https://github.com/ThorstenRhau/token).
 
 ## Installation
 
