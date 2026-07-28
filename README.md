@@ -2,47 +2,11 @@
 
 A warm muted colorscheme for Neovim — cream (light) and espresso (dark) variants.
 
+> **Note:** The espresso (dark) variant is still a work in progress.
+
+![Cream theme preview](assets/cream.png)
+
 Inspired by the structure of [token.nvim](https://github.com/your-username/token.nvim), with its own warm palette.
-
-## Palette
-
-### Cream
-
-Warm cream background with desaturated, earthy accent colors.
-
-| Role | Hex |
-|------|-----|
-| Background | `#fdf6da` |
-| Foreground | `#141210` |
-| Accent (functions) | `#9a4929` |
-| Accent2 (keywords) | `#876032` |
-| Red | `#b05555` |
-| Green | `#3d6e3d` |
-| Yellow | `#6e5c20` |
-| Blue | `#527594` |
-| Purple | `#7c619a` |
-| Cyan | `#2d6c6c` |
-| Orange | `#9a5f22` |
-| Olive | `#63742f` |
-
-### Espresso
-
-Warm charcoal background with muted, melange-inspired accent colors.
-
-| Role | Hex |
-|------|-----|
-| Background | `#1e1c17` |
-| Foreground | `#e0def4` |
-| Accent (functions) | `#d97757` |
-| Accent2 (keywords) | `#c4956a` |
-| Red | `#c67777` |
-| Green | `#7da47a` |
-| Yellow | `#c4a855` |
-| Blue | `#7b9ebd` |
-| Purple | `#a68bbf` |
-| Cyan | `#6ba8a8` |
-| Orange | `#d4914a` |
-| Olive | `#a8b56b` |
 
 ## Installation
 
@@ -63,7 +27,7 @@ Warm charcoal background with muted, melange-inspired accent colors.
 
 ```lua
 require("bono").setup({
-  variant = nil,          -- nil = auto-detect from vim.opt.background, "cream", or "espresso"
+  variant = "cream",          -- nil = auto-detect from vim.opt.background, "cream", or "espresso"
   transparent = false,    -- transparent background
   dim_inactive = false,   -- dim inactive windows
   styles = {
