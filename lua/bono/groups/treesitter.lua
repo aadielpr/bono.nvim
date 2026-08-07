@@ -7,10 +7,18 @@ local function get_hl(c, opts)
   local S = require("bono.config").style
   local styles = opts.styles
 
+  -- palette1 (cream:#527594 / espresso:#7b9ebd) modules, tags, links, UI accents
+  -- palette2 (cream:#2d6c6c / espresso:#6ba8a8) keywords, types, completion
+  -- palette3 (cream:#7c619a / espresso:#a68bbf) constants, preprocessor, special
+  -- palette4 (cream:#6e5c20 / espresso:#c4a855) numbers, booleans
+  -- palette5 (cream:#b05555 / espresso:#c67777) errors, debug
+  -- palette6 (cream:#3d6e3d / espresso:#7da47a) strings
+  -- palette7 (cream:#63742f / espresso:#a8b56b) markdown H3
+  -- palette8 (cream:#9a5f22 / espresso:#d4914a) reserved
   return {
     -- ── Variables ──────────────────────────────────────────────
     ["@variable"]                        = { fg = c.fg, style = S(styles, "variables") },
-    ["@variable.builtin"]                = { fg = c.cyan, style = S(styles, "keywords") },
+    ["@variable.builtin"]                = { fg = c.palette2, style = S(styles, "keywords") },
     ["@variable.parameter"]              = { fg = c.dark },
     ["@variable.parameter.builtin"]      = { fg = c.accent2, style = S(styles, "keywords") },
     ["@variable.member"]                 = { fg = c.fg },
@@ -21,19 +29,19 @@ local function get_hl(c, opts)
     ["@constant.macro"]                  = { link = "Macro" },
 
     -- ── Modules / namespaces ───────────────────────────────────
-    ["@module"]                          = { fg = c.blue },
-    ["@module.builtin"]                  = { fg = c.blue },
+    ["@module"]                          = { fg = c.palette1 },
+    ["@module.builtin"]                  = { fg = c.palette1 },
     ["@label"]                           = { link = "Label" },
 
     -- ── Strings ────────────────────────────────────────────────
     ["@string"]                          = { link = "String" },
-    ["@string.documentation"]            = { fg = c.green, style = S(styles, "strings") },
-    ["@string.regexp"]                   = { fg = c.purple },
-    ["@string.escape"]                   = { fg = c.purple },
+    ["@string.documentation"]            = { fg = c.palette6, style = S(styles, "strings") },
+    ["@string.regexp"]                   = { fg = c.palette3 },
+    ["@string.escape"]                   = { fg = c.palette3 },
     ["@string.special"]                  = { link = "SpecialChar" },
-    ["@string.special.symbol"]           = { fg = c.purple },
-    ["@string.special.path"]             = { fg = c.blue },
-    ["@string.special.url"]              = { fg = c.blue, underline = true },
+    ["@string.special.symbol"]           = { fg = c.palette3 },
+    ["@string.special.path"]             = { fg = c.palette1 },
+    ["@string.special.url"]              = { fg = c.palette1, underline = true },
 
     -- ── Characters / numbers ───────────────────────────────────
     ["@character"]                       = { link = "Character" },
@@ -48,49 +56,49 @@ local function get_hl(c, opts)
     ["@type.definition"]                 = { link = "Type" },
 
     -- ── Attributes / decorators ────────────────────────────────
-    ["@attribute"]                       = { fg = c.cyan },
-    ["@attribute.builtin"]               = { fg = c.purple },
+    ["@attribute"]                       = { fg = c.palette2 },
+    ["@attribute.builtin"]               = { fg = c.palette3 },
     ["@property"]                        = { fg = c.fg, style = S(styles, "variables") },
 
     -- ── Functions ──────────────────────────────────────────────
     ["@function"]                        = { link = "Function" },
     ["@function.builtin"]                = { fg = c.accent, style = S(styles, "functions") },
     ["@function.call"]                   = { link = "Function" },
-    ["@function.macro"]                  = { fg = c.purple },
+    ["@function.macro"]                  = { fg = c.palette3 },
     ["@function.method"]                 = { link = "Function" },
     ["@function.method.call"]            = { link = "Function" },
 
     -- ── Constructors ───────────────────────────────────────────
-    ["@constructor"]                     = { fg = c.cyan },
+    ["@constructor"]                     = { fg = c.palette2 },
 
     -- ── Operators / punctuation ────────────────────────────────
     ["@operator"]                        = { link = "Operator" },
     ["@punctuation"]                     = { fg = c.mid },
     ["@punctuation.delimiter"]           = { fg = c.mid },
     ["@punctuation.bracket"]             = { fg = c.mid },
-    ["@punctuation.special"]             = { fg = c.purple },
+    ["@punctuation.special"]             = { fg = c.palette3 },
 
     -- ── Comments ───────────────────────────────────────────────
     ["@comment"]                         = { link = "Comment" },
     ["@comment.documentation"]           = { fg = c.light, style = S(styles, "comments") },
-    ["@comment.error"]                   = { fg = c.red },
+    ["@comment.error"]                   = { fg = c.palette5 },
     ["@comment.warning"]                 = { fg = c.warning },
-    ["@comment.todo"]                    = { fg = c.darkest, bg = c.yellow, blend = 20 },
+    ["@comment.todo"]                    = { fg = c.darkest, bg = c.palette4, blend = 20 },
     ["@comment.note"]                    = { fg = c.info },
     ["@comment.hint"]                    = { fg = c.hint },
     ["@comment.info"]                    = { fg = c.info },
 
     -- ── Keywords ───────────────────────────────────────────────
-    ["@keyword"]                         = { fg = c.cyan, style = S(styles, "keywords") },
-    ["@keyword.coroutine"]               = { fg = c.cyan, style = S(styles, "keywords") },
-    ["@keyword.function"]                = { fg = c.blue, style = S(styles, "keywords") },
-    ["@keyword.operator"]                = { fg = c.cyan, style = S(styles, "keywords") },
+    ["@keyword"]                         = { fg = c.palette2, style = S(styles, "keywords") },
+    ["@keyword.coroutine"]               = { fg = c.palette2, style = S(styles, "keywords") },
+    ["@keyword.function"]                = { fg = c.palette1, style = S(styles, "keywords") },
+    ["@keyword.operator"]                = { fg = c.palette2, style = S(styles, "keywords") },
     ["@keyword.import"]                  = { link = "Include" },
     ["@keyword.type"]                    = { link = "@keyword" },
-    ["@keyword.modifier"]                = { fg = c.blue, style = S(styles, "keywords") },
+    ["@keyword.modifier"]                = { fg = c.palette1, style = S(styles, "keywords") },
     ["@keyword.repeat"]                  = { link = "Repeat" },
-    ["@keyword.return"]                  = { fg = c.cyan, style = S(styles, "keywords") },
-    ["@keyword.debug"]                   = { fg = c.red },
+    ["@keyword.return"]                  = { fg = c.palette2, style = S(styles, "keywords") },
+    ["@keyword.debug"]                   = { fg = c.palette5 },
     ["@keyword.exception"]               = { link = "Exception" },
     ["@keyword.conditional"]             = { link = "Conditional" },
     ["@keyword.conditional.ternary"]     = { fg = c.dark },
@@ -99,9 +107,9 @@ local function get_hl(c, opts)
     ["@keyword.storage"]                 = { fg = c.accent2, style = S(styles, "keywords") },
 
     -- ── HTML / JSX / XML tags ──────────────────────────────────
-    ["@tag"]                             = { fg = c.blue },
-    ["@tag.builtin"]                     = { fg = c.blue },
-    ["@tag.attribute"]                   = { fg = c.yellow },
+    ["@tag"]                             = { fg = c.palette1 },
+    ["@tag.builtin"]                     = { fg = c.palette1 },
+    ["@tag.attribute"]                   = { fg = c.palette4 },
     ["@tag.delimiter"]                   = { fg = c.mid },
 
     -- ── Markup (Markdown etc.) ─────────────────────────────────
@@ -113,18 +121,18 @@ local function get_hl(c, opts)
     ["@markup.heading"]                  = { fg = c.accent, style = S(styles, "keywords") },
     ["@markup.heading.1"]                = { fg = c.accent, style = S(styles, "keywords") },
     ["@markup.heading.2"]                = { fg = c.accent2, style = S(styles, "keywords") },
-    ["@markup.heading.3"]                = { fg = c.olive, style = S(styles, "keywords") },
-    ["@markup.heading.4"]                = { fg = c.blue, style = S(styles, "keywords") },
-    ["@markup.heading.5"]                = { fg = c.green, style = S(styles, "keywords") },
-    ["@markup.heading.6"]                = { fg = c.purple, style = S(styles, "keywords") },
+    ["@markup.heading.3"]                = { fg = c.palette7, style = S(styles, "keywords") },
+    ["@markup.heading.4"]                = { fg = c.palette1, style = S(styles, "keywords") },
+    ["@markup.heading.5"]                = { fg = c.palette6, style = S(styles, "keywords") },
+    ["@markup.heading.6"]                = { fg = c.palette3, style = S(styles, "keywords") },
     ["@markup.quote"]                    = { fg = c.dark },
-    ["@markup.math"]                     = { fg = c.blue },
-    ["@markup.environment"]              = { fg = c.purple },
-    ["@markup.link"]                     = { fg = c.blue, underline = true },
-    ["@markup.link.label"]               = { fg = c.blue },
-    ["@markup.link.url"]                 = { fg = c.blue, underline = true },
-    ["@markup.raw"]                      = { fg = c.green },
-    ["@markup.raw.block"]                = { fg = c.green },
+    ["@markup.math"]                     = { fg = c.palette1 },
+    ["@markup.environment"]              = { fg = c.palette3 },
+    ["@markup.link"]                     = { fg = c.palette1, underline = true },
+    ["@markup.link.label"]               = { fg = c.palette1 },
+    ["@markup.link.url"]                 = { fg = c.palette1, underline = true },
+    ["@markup.raw"]                      = { fg = c.palette6 },
+    ["@markup.raw.block"]                = { fg = c.palette6 },
     ["@markup.list"]                     = { fg = c.accent2 },
     ["@markup.list.checked"]             = { fg = c.success },
     ["@markup.list.unchecked"]           = { fg = c.mid },
@@ -151,7 +159,7 @@ local function get_hl(c, opts)
     -- ── Misc ───────────────────────────────────────────────────
     ["@conceal"]                         = { fg = c.mid },
     ["@none"]                            = {},
-    ["@error"]                           = { fg = c.red },
+    ["@error"]                           = { fg = c.palette5 },
     ["@spell"]                           = {},
     ["@nospell"]                         = {},
   }

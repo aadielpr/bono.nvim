@@ -4,6 +4,14 @@
 local function get_hl(c, opts)
   local styles = opts.styles
 
+  -- palette1 (cream:#527594 / espresso:#7b9ebd) modules, tags, links, UI accents
+  -- palette2 (cream:#2d6c6c / espresso:#6ba8a8) keywords, types, completion
+  -- palette3 (cream:#7c619a / espresso:#a68bbf) constants, preprocessor, special
+  -- palette4 (cream:#6e5c20 / espresso:#c4a855) numbers, booleans
+  -- palette5 (cream:#b05555 / espresso:#c67777) errors, debug
+  -- palette6 (cream:#3d6e3d / espresso:#7da47a) strings
+  -- palette7 (cream:#63742f / espresso:#a8b56b) markdown H3
+  -- palette8 (cream:#9a5f22 / espresso:#d4914a) reserved
   return {
     Normal         = { fg = c.fg, bg = opts.transparent and "NONE" or c.bg },
     NormalNC       = { fg = c.fg, bg = opts.dim_inactive and c.surface or (opts.transparent and "NONE" or c.bg) },
@@ -18,12 +26,12 @@ local function get_hl(c, opts)
     VirtColumn     = { fg = c.lighter },
     CursorLine     = { bg = c.overlay },
     CursorLineNr   = { fg = c.darkest },
-    Directory      = { fg = c.blue },
+    Directory      = { fg = c.palette1 },
 
-    DiffAdd        = { bg = c.green, blend = 15 },
-    DiffChange     = { bg = c.yellow, blend = 15 },
-    DiffDelete     = { bg = c.red, blend = 15 },
-    DiffText       = { bg = c.yellow, blend = 20 },
+    DiffAdd        = { bg = c.palette6, blend = 15 },
+    DiffChange     = { bg = c.palette4, blend = 15 },
+    DiffDelete     = { bg = c.palette5, blend = 15 },
+    DiffText       = { bg = c.palette4, blend = 20 },
 
     EndOfBuffer    = { fg = c.bg },
 
@@ -33,17 +41,17 @@ local function get_hl(c, opts)
 
     IncSearch      = { reverse = true },
     CurSearch      = { link = "IncSearch" },
-    Search         = { bg = c.yellow, blend = 25 },
-    Substitute     = { bg = c.blue, blend = 25 },
+    Search         = { bg = c.palette4, blend = 25 },
+    Substitute     = { bg = c.palette1, blend = 25 },
 
     LineNr         = { fg = c.light },
     LineNrAbove    = { link = "LineNr" },
     LineNrBelow    = { link = "LineNr" },
 
-    MatchParen     = { bg = c.purple, blend = 20 },
+    MatchParen     = { bg = c.palette3, blend = 20 },
 
     ModeMsg        = { fg = c.dark },
-    MoreMsg        = { fg = c.blue },
+    MoreMsg        = { fg = c.palette1 },
     MsgArea        = { fg = c.dark },
 
     NonText        = { fg = c.lighter },
@@ -54,13 +62,13 @@ local function get_hl(c, opts)
     PmenuSbar      = { bg = c.overlay },
     PmenuThumb     = { bg = c.lighter },
 
-    Question       = { fg = c.blue },
+    Question       = { fg = c.palette1 },
 
     QuickFixLine   = { bg = c.overlay },
 
     SignColumn     = { fg = c.darkest, bg = opts.transparent and "NONE" or c.bg },
 
-    SpecialKey     = { fg = c.blue },
+    SpecialKey     = { fg = c.palette1 },
 
     SpellBad       = { sp = c.danger, undercurl = true },
     SpellCap       = { sp = c.warning, undercurl = true },
@@ -78,7 +86,7 @@ local function get_hl(c, opts)
 
     VertSplit      = { fg = c.lighter },
 
-    Visual         = { bg = c.blue, blend = 15 },
+    Visual         = { bg = c.palette1, blend = 15 },
     VisualNOS      = { link = "Visual" },
 
     WarningMsg     = { fg = c.warning },

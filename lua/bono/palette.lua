@@ -20,14 +20,14 @@ palette.variants = {
     accent     = "#9a4929",  -- primary accent: functions, headings
     accent2    = "#876032",  -- secondary accent: keywords, statements
 
-    green      = "#3d6e3d",
-    blue       = "#527594",
-    red        = '#b05555',
-    yellow     = '#6e5c20',
-    purple     = '#7c619a',
-    cyan       = '#2d6c6c',
-    orange     = '#9a5f22',
-    olive      = '#63742f',
+    palette1   = "#527594",  -- modules, tags, links, UI accents (47 uses)
+    palette2   = "#2d6c6c",  -- keywords, types, completion (38 uses)
+    palette3   = "#7c619a",  -- constants, preprocessor, special (33 uses)
+    palette4   = "#6e5c20",  -- numbers, booleans (16 uses)
+    palette5   = "#b05555",  -- errors, debug (15 uses)
+    palette6   = "#3d6e3d",  -- strings (10 uses)
+    palette7   = "#63742f",  -- markdown H3 (2 uses)
+    palette8   = "#9a5f22",  -- reserved (0 uses)
 
     surface    = "#f5edd2",
     overlay    = "#ede5c9",
@@ -53,14 +53,14 @@ palette.variants = {
     accent     = "#d97757",  -- primary accent: functions, headings
     accent2    = "#c4956a",  -- secondary accent: keywords, statements
 
-    blue       = '#7b9ebd',
-    green      = '#7da47a',
-    red        = '#c67777',
-    yellow     = '#c4a855',
-    purple     = '#a68bbf',
-    cyan       = '#6ba8a8',
-    orange     = '#d4914a',
-    olive      = '#a8b56b',
+    palette1   = "#7b9ebd",  -- modules, tags, links, UI accents (47 uses)
+    palette2   = "#6ba8a8",  -- keywords, types, completion (38 uses)
+    palette3   = "#a68bbf",  -- constants, preprocessor, special (33 uses)
+    palette4   = "#c4a855",  -- numbers, booleans (16 uses)
+    palette5   = "#c67777",  -- errors, debug (15 uses)
+    palette6   = "#7da47a",  -- strings (10 uses)
+    palette7   = "#a8b56b",  -- markdown H3 (2 uses)
+    palette8   = "#d4914a",  -- reserved (0 uses)
 
     surface    = "#2a273f",
     overlay    = "#393552",

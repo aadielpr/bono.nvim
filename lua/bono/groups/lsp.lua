@@ -2,6 +2,14 @@
 ---@param c table Palette
 ---@param opts bono.Config
 local function get_hl(c, opts)
+  -- palette1 (cream:#527594 / espresso:#7b9ebd) modules, tags, links, UI accents
+  -- palette2 (cream:#2d6c6c / espresso:#6ba8a8) keywords, types, completion
+  -- palette3 (cream:#7c619a / espresso:#a68bbf) constants, preprocessor, special
+  -- palette4 (cream:#6e5c20 / espresso:#c4a855) numbers, booleans
+  -- palette5 (cream:#b05555 / espresso:#c67777) errors, debug
+  -- palette6 (cream:#3d6e3d / espresso:#7da47a) strings
+  -- palette7 (cream:#63742f / espresso:#a8b56b) markdown H3
+  -- palette8 (cream:#9a5f22 / espresso:#d4914a) reserved
   return {
     -- Diagnostic signs
     DiagnosticError             = { fg = c.danger },
@@ -36,9 +44,9 @@ local function get_hl(c, opts)
     DiagnosticUnderlineOk       = { sp = c.success, undercurl = true },
 
     -- LSP references
-    LspReferenceRead            = { bg = c.blue, blend = 15 },
-    LspReferenceText            = { bg = c.blue, blend = 15 },
-    LspReferenceWrite           = { bg = c.blue, blend = 15 },
+    LspReferenceRead            = { bg = c.palette1, blend = 15 },
+    LspReferenceText            = { bg = c.palette1, blend = 15 },
+    LspReferenceWrite           = { bg = c.palette1, blend = 15 },
 
     -- LSP codelens
     LspCodeLens                 = { fg = c.light },
