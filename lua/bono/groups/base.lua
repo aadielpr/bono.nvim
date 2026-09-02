@@ -4,14 +4,14 @@
 local function get_hl(c, opts)
   local styles = opts.styles
 
-  -- palette1 (cream:#527594 / espresso:#7b9ebd) modules, tags, links, UI accents
-  -- palette2 (cream:#2d6c6c / espresso:#6ba8a8) keywords, types, completion
-  -- palette3 (cream:#7c619a / espresso:#a68bbf) constants, preprocessor, special
-  -- palette4 (cream:#6e5c20 / espresso:#c4a855) numbers, booleans
-  -- palette5 (cream:#b05555 / espresso:#c67777) errors, debug
-  -- palette6 (cream:#3d6e3d / espresso:#7da47a) strings
-  -- palette7 (cream:#63742f / espresso:#a8b56b) markdown H3
-  -- palette8 (cream:#9a5f22 / espresso:#d4914a) reserved
+  -- palette1 (cream:#527594 / espresso:#8fb4d6) modules, tags, links, UI accents
+  -- palette2 (cream:#2d6c6c / espresso:#d19a66) keywords, types, completion
+  -- palette3 (cream:#7c619a / espresso:#6caaa4) constants, preprocessor, special
+  -- palette4 (cream:#6e5c20 / espresso:#d19a66) numbers, booleans
+  -- palette5 (cream:#b05555 / espresso:#d28f8f) errors, debug
+  -- palette6 (cream:#3d6e3d / espresso:#98a880) strings
+  -- palette7 (cream:#63742f / espresso:#8b6a5c) markdown H3
+  -- palette8 (cream:#9a5f22 / espresso:#b5a6d6) reserved
   return {
     Normal         = { fg = c.fg, bg = opts.transparent and "NONE" or c.bg },
     NormalNC       = { fg = c.fg, bg = opts.dim_inactive and c.surface or (opts.transparent and "NONE" or c.bg) },

@@ -40,36 +40,36 @@ palette.variants = {
   },
 
   espresso = {
-    bg         = "#1e1c17",
-    fg         = "#e0def4",
+    bg         = "#13110e",
+    fg         = "#e7dcc4",
 
-    lightest   = "#2a283e",
-    lighter    = "#393552",
-    light      = "#6e6a86",
-    mid        = "#908caa",
-    dark       = "#b8b5cf",
-    darkest    = "#e0def4",
+    lightest   = "#26211c",
+    lighter    = "#3d352b",
+    light      = "#6b6259",
+    mid        = "#cbb79e",
+    dark       = "#cbb79e",
+    darkest    = "#e7dcc4",
 
-    accent     = "#d97757",  -- primary accent: functions, headings
-    accent2    = "#c4956a",  -- secondary accent: keywords, statements
+    accent     = "#e0b182",  -- Apricot: functions, headings
+    accent2    = "#a67c52",  -- Coffee: keywords, statements
 
-    palette1   = "#7b9ebd",  -- modules, tags, links, UI accents (47 uses)
-    palette2   = "#6ba8a8",  -- keywords, types, completion (38 uses)
-    palette3   = "#a68bbf",  -- constants, preprocessor, special (33 uses)
-    palette4   = "#c4a855",  -- numbers, booleans (16 uses)
-    palette5   = "#c67777",  -- errors, debug (15 uses)
-    palette6   = "#7da47a",  -- strings (10 uses)
-    palette7   = "#a8b56b",  -- markdown H3 (2 uses)
-    palette8   = "#d4914a",  -- reserved (0 uses)
+    palette1   = "#a67c52",  -- Sky: modules, tags, links, UI accents (47 uses)
+    palette2   = "#d19a66",  -- Caramel: keywords, types, completion (38 uses)
+    palette3   = "#6caaa4",  -- Teal: constants, preprocessor, special (33 uses)
+    palette4   = "#d19a66",  -- Caramel: numbers, booleans (16 uses)
+    palette5   = "#d28f8f",  -- Rose: errors, operators, debug (15 uses)
+    palette6   = "#98a880",  -- Sage: strings (10 uses)
+    palette7   = "#8b6a5c",  -- Cocoa: markdown H3 (2 uses)
+    palette8   = "#b5a6d6",  -- Lavender: reserved (0 uses)
 
-    surface    = "#2a273f",
-    overlay    = "#393552",
+    surface    = "#1e1b16",
+    overlay    = "#26211c",
 
-    success    = "#3e8fb0",
-    warning    = "#f6c177",
-    danger     = "#eb6f92",
-    info       = "#9ccfd8",
-    hint       = "#c4a7e7",
+    success    = "#7fa26e",  -- Matcha
+    warning    = "#d19a66",  -- Caramel
+    danger     = "#d28f8f",  -- Rose
+    info       = "#6caaa4",  -- Teal
+    hint       = "#8fb4d6",  -- Sky
   },
 }
 
