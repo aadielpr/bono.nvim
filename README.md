@@ -2,9 +2,13 @@
 
 A warm muted colorscheme for Neovim — cream (light) and espresso (dark) variants.
 
-> **Note:** The espresso (dark) variant is still a work in progress.
+### Cream
 
 ![Cream theme preview](assets/cream.png)
+
+### Espresso
+
+![Espresso theme preview](assets/espresso.png)
 
 *Font: GeistMono · [Tmux config](https://github.com/aadielpr/.config/tree/main/tmux) · [Ghostty theme](https://github.com/aadielpr/.config/blob/main/ghostty/themes/bono-cream.conf) · [Pi theme](https://github.com/aadielpr/.config/blob/main/pi/themes/bono-cream.json)*
 
