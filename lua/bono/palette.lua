@@ -17,17 +17,17 @@ palette.variants = {
     dark       = "#6a716e",
     darkest    = "#5a4a42",
 
-    accent     = "#9a4929",  -- primary accent: functions, headings
-    accent2    = "#876032",  -- secondary accent: keywords, statements
+    accent     = "#B94D3B",
+    accent2    = "#876032",
 
-    palette1   = "#527594",  -- modules, tags, links, UI accents (47 uses)
-    palette2   = "#2d6c6c",  -- keywords, types, completion (38 uses)
-    palette3   = "#7c619a",  -- constants, preprocessor, special (33 uses)
-    palette4   = "#6e5c20",  -- numbers, booleans (16 uses)
-    palette5   = "#b05555",  -- errors, debug (15 uses)
-    palette6   = "#3d6e3d",  -- strings (10 uses)
-    palette7   = "#63742f",  -- markdown H3 (2 uses)
-    palette8   = "#9a5f22",  -- reserved (0 uses)
+    palette1   = "#527594",
+    palette2   = "#2d6c6c",
+    palette3   = "#7c619a",
+    palette4   = "#6e5c20",
+    palette5   = "#b05555",
+    palette6   = "#3d6e3d",
+    palette7   = "#63742f",
+    palette8   = "#9a5f22",
 
     surface    = "#f5edd2",
     overlay    = "#ede5c9",
@@ -40,36 +40,36 @@ palette.variants = {
   },
 
   espresso = {
-    bg         = "#13110e",
-    fg         = "#e7dcc4",
+    bg         = "#10233d",
+    fg         = "#f2d9a2",
 
-    lightest   = "#26211c",
-    lighter    = "#3d352b",
-    light      = "#6b6259",
-    mid        = "#cbb79e",
-    dark       = "#cbb79e",
-    darkest    = "#e7dcc4",
+    lightest   = "#193651",
+    lighter    = "#244664",
+    light      = "#667786",
+    mid        = "#82977d",
+    dark       = "#909587",
+    darkest    = "#f2d9a2",
 
-    accent     = "#e0b182",  -- Apricot: functions, headings
-    accent2    = "#a67c52",  -- Coffee: keywords, statements
+    accent     = "#e97931",
+    accent2    = "#e8a33b",
 
-    palette1   = "#a67c52",  -- Sky: modules, tags, links, UI accents (47 uses)
-    palette2   = "#d19a66",  -- Caramel: keywords, types, completion (38 uses)
-    palette3   = "#6caaa4",  -- Teal: constants, preprocessor, special (33 uses)
-    palette4   = "#d19a66",  -- Caramel: numbers, booleans (16 uses)
-    palette5   = "#d28f8f",  -- Rose: errors, operators, debug (15 uses)
-    palette6   = "#98a880",  -- Sage: strings (10 uses)
-    palette7   = "#8b6a5c",  -- Cocoa: markdown H3 (2 uses)
-    palette8   = "#b5a6d6",  -- Lavender: reserved (0 uses)
+    palette1   = "#57a79c",
+    palette2   = "#e8a33b",
+    palette3   = "#c95842",
+    palette4   = "#e97931",
+    palette5   = "#d83b24",
+    palette6   = "#82977d",
+    palette7   = "#9c6941",
+    palette8   = "#667786",
 
-    surface    = "#1e1b16",
-    overlay    = "#26211c",
+    surface    = "#193651",
+    overlay    = "#28615d",
 
-    success    = "#7fa26e",  -- Matcha
-    warning    = "#d19a66",  -- Caramel
-    danger     = "#d28f8f",  -- Rose
-    info       = "#6caaa4",  -- Teal
-    hint       = "#8fb4d6",  -- Sky
+    success    = "#82977d",
+    warning    = "#e8a33b",
+    danger     = "#d83b24",
+    info       = "#57a79c",
+    hint       = "#16817d",
   },
 }
 
