@@ -17,7 +17,7 @@ palette.variants = {
     dark       = "#6a716e",
     darkest    = "#5a4a42",
 
-    accent     = "#B94D3B",
+    accent     = "#AD4737",
     accent2    = "#876032",
 
     palette1   = "#527594",
