@@ -1,5 +1,5 @@
 --- Collects all highlight groups
----@param c table Palette
+---@param c table Resolved highlight roles
 ---@param opts bono.Config
 ---@return table highlights
 local function setup(c, opts)

@@ -1,90 +1,67 @@
 -- stylua: ignore
 ---
---- bono palette — warm muted colorscheme variants
+--- bono named color swatches for each variant
 ---
 
 local palette = {}
 
 palette.variants = {
   cream = {
-    bg         = "#fdf6da",
-    fg         = "#141210",
-
-    lightest   = "#c8bfb0",
-    lighter    = "#a89888",
-    light      = "#948e84",
-    mid        = "#7d7872",
-    dark       = "#6a716e",
-    darkest    = "#5a4a42",
-
-    accent     = "#AD4737",
-    accent2    = "#876032",
-
-    palette1   = "#527594",
-    palette2   = "#2d6c6c",
-    palette3   = "#7c619a",
-    palette4   = "#6e5c20",
-    palette5   = "#b05555",
-    palette6   = "#3d6e3d",
-    palette7   = "#63742f",
-    palette8   = "#9a5f22",
-
-    surface    = "#f5edd2",
-    overlay    = "#ede5c9",
-
-    success    = "#3d6e3d",
-    warning    = "#8b6a3a",
-    danger     = "#a0423a",
-    info       = "#2d5080",
-    hint       = "#356858",
+    warm_cream = "#fdf6da",
+    ink = "#141210",
+    linen = "#c8bfb0",
+    taupe = "#a89888",
+    stone = "#948e84",
+    gray = "#7d7872",
+    slate = "#6a716e",
+    dark_brown = "#5a4a42",
+    rust = "#AD4737",
+    brown = "#876032",
+    blue = "#527594",
+    deep_teal = "#2d6c6c",
+    purple = "#7c619a",
+    olive = "#6e5c20",
+    rose = "#b05555",
+    green = "#3d6e3d",
+    moss = "#63742f",
+    ochre = "#9a5f22",
+    cream_surface = "#f5edd2",
+    cream_overlay = "#ede5c9",
+    ochre_brown = "#8b6a3a",
+    vermilion = "#a0423a",
+    deep_blue = "#2d5080",
+    forest_teal = "#356858",
   },
 
   espresso = {
-    bg         = "#10233d",
-    fg         = "#f2d9a2",
-
-    lightest   = "#193651",
-    lighter    = "#244664",
-    light      = "#667786",
-    mid        = "#82977d",
-    dark       = "#909587",
-    darkest    = "#f2d9a2",
-
-    accent     = "#e97931",
-    accent2    = "#e8a33b",
-
-    palette1   = "#57a79c",
-    palette2   = "#e8a33b",
-    palette3   = "#c95842",
-    palette4   = "#e97931",
-    palette5   = "#d83b24",
-    palette6   = "#82977d",
-    palette7   = "#9c6941",
-    palette8   = "#667786",
-
-    surface    = "#193651",
-    overlay    = "#28615d",
-
-    success    = "#82977d",
-    warning    = "#e8a33b",
-    danger     = "#d83b24",
-    info       = "#57a79c",
-    hint       = "#16817d",
+    espresso = "#13110e",
+    warm_cream = "#e7dcc4",
+    dark_surface = "#26211c",
+    dark_brown = "#3d352b",
+    warm_gray = "#6b6259",
+    taupe = "#cbb79e",
+    peach = "#e0b182",
+    brown = "#a67c52",
+    copper = "#d19a66",
+    teal = "#6caaa4",
+    rose = "#d28f8f",
+    sage = "#98a880",
+    clay = "#8b6a5c",
+    lavender = "#b5a6d6",
+    dark_panel = "#1e1b16",
+    muted_green = "#7fa26e",
+    pale_blue = "#8fb4d6",
   },
 }
 
---- Resolve the palette for a given variant.
---- Falls back to vim.o.background detection: "light" → cream, "dark" → espresso.
+--- Select named swatches for a variant.
 ---@param variant string|nil
----@return table
+---@return table palette, string variant
 function palette.get(variant)
-  if variant and palette.variants[variant] then
-    return palette.variants[variant]
+  if not variant or not palette.variants[variant] then
+    variant = vim.opt.background:get() == "dark" and "espresso" or "cream"
   end
-  if vim.opt.background:get() == "dark" then
-    return palette.variants.espresso
-  end
-  return palette.variants.cream
+  return palette.variants[variant], variant
 end
 
 return palette

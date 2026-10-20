@@ -3,11 +3,11 @@
 local function get_hl(c)
   return {
     -- Diagnostic signs
-    DiagnosticError             = { fg = c.danger },
-    DiagnosticWarn              = { fg = c.warning },
-    DiagnosticInfo              = { fg = c.info },
-    DiagnosticHint              = { fg = c.hint },
-    DiagnosticOk                = { fg = c.success },
+    DiagnosticError             = { fg = c.groups.diagnostics.error },
+    DiagnosticWarn              = { fg = c.groups.diagnostics.warning },
+    DiagnosticInfo              = { fg = c.groups.diagnostics.info },
+    DiagnosticHint              = { fg = c.groups.diagnostics.hint },
+    DiagnosticOk                = { fg = c.groups.diagnostics.success },
     DiagnosticDefaultError      = { link = "DiagnosticError" },
     DiagnosticDefaultWarn       = { link = "DiagnosticWarn" },
     DiagnosticDefaultInfo       = { link = "DiagnosticInfo" },
@@ -23,28 +23,28 @@ local function get_hl(c)
     DiagnosticSignInfo          = { link = "DiagnosticInfo" },
     DiagnosticSignHint          = { link = "DiagnosticHint" },
     DiagnosticSignOk            = { link = "DiagnosticOk" },
-    DiagnosticVirtualTextError  = { fg = c.danger, bg = c.danger, blend = 12 },
-    DiagnosticVirtualTextWarn   = { fg = c.warning, bg = c.warning, blend = 12 },
-    DiagnosticVirtualTextInfo   = { fg = c.info, bg = c.info, blend = 12 },
-    DiagnosticVirtualTextHint   = { fg = c.hint, bg = c.hint, blend = 12 },
-    DiagnosticVirtualTextOk     = { fg = c.success, bg = c.success, blend = 12 },
-    DiagnosticUnderlineError    = { sp = c.danger, undercurl = true },
-    DiagnosticUnderlineWarn     = { sp = c.warning, undercurl = true },
-    DiagnosticUnderlineInfo     = { sp = c.info, undercurl = true },
-    DiagnosticUnderlineHint     = { sp = c.hint, undercurl = true },
-    DiagnosticUnderlineOk       = { sp = c.success, undercurl = true },
+    DiagnosticVirtualTextError  = { fg = c.groups.diagnostics.error, bg = c.groups.diagnostics.error, blend = 12 },
+    DiagnosticVirtualTextWarn   = { fg = c.groups.diagnostics.warning, bg = c.groups.diagnostics.warning, blend = 12 },
+    DiagnosticVirtualTextInfo   = { fg = c.groups.diagnostics.info, bg = c.groups.diagnostics.info, blend = 12 },
+    DiagnosticVirtualTextHint   = { fg = c.groups.diagnostics.hint, bg = c.groups.diagnostics.hint, blend = 12 },
+    DiagnosticVirtualTextOk     = { fg = c.groups.diagnostics.success, bg = c.groups.diagnostics.success, blend = 12 },
+    DiagnosticUnderlineError    = { sp = c.groups.diagnostics.error, undercurl = true },
+    DiagnosticUnderlineWarn     = { sp = c.groups.diagnostics.warning, undercurl = true },
+    DiagnosticUnderlineInfo     = { sp = c.groups.diagnostics.info, undercurl = true },
+    DiagnosticUnderlineHint     = { sp = c.groups.diagnostics.hint, undercurl = true },
+    DiagnosticUnderlineOk       = { sp = c.groups.diagnostics.success, undercurl = true },
 
     -- LSP references
-    LspReferenceRead            = { bg = c.palette1, blend = 15 },
-    LspReferenceText            = { bg = c.palette1, blend = 15 },
-    LspReferenceWrite           = { bg = c.palette1, blend = 15 },
+    LspReferenceRead            = { bg = c.groups.ui.selection, blend = 15 },
+    LspReferenceText            = { bg = c.groups.ui.selection, blend = 15 },
+    LspReferenceWrite           = { bg = c.groups.ui.selection, blend = 15 },
 
     -- LSP codelens
-    LspCodeLens                 = { fg = c.light },
-    LspCodeLensSeparator        = { fg = c.lighter },
+    LspCodeLens                 = { fg = c.groups.ui.muted },
+    LspCodeLensSeparator        = { fg = c.groups.ui.border },
 
     -- LSP inlay hints
-    LspInlayHint                = { fg = c.light, bg = c.surface },
+    LspInlayHint                = { fg = c.groups.ui.muted, bg = c.groups.ui.surface },
 
     -- Semantic tokens — link to tree-sitter groups
     ["@lsp.type.class"]         = { link = "@type" },

@@ -3,89 +3,89 @@
 ---@param opts bono.Config
 local function get_hl(c, opts)
   return {
-    Normal         = { fg = c.fg, bg = opts.transparent and "NONE" or c.bg },
-    NormalNC       = { fg = c.fg, bg = opts.dim_inactive and c.surface or (opts.transparent and "NONE" or c.bg) },
-    NormalFloat    = { bg = c.bg },
-    FloatBorder    = { fg = c.lighter, bg = c.bg },
-    FloatTitle     = { fg = c.darkest, bg = c.bg },
+    Normal         = { fg = c.groups.ui.foreground, bg = opts.transparent and "NONE" or c.groups.ui.background },
+    NormalNC       = { fg = c.groups.ui.foreground, bg = opts.dim_inactive and c.groups.ui.surface or (opts.transparent and "NONE" or c.groups.ui.background) },
+    NormalFloat    = { bg = c.groups.ui.background },
+    FloatBorder    = { fg = c.groups.ui.border, bg = c.groups.ui.background },
+    FloatTitle     = { fg = c.groups.ui.strong, bg = c.groups.ui.background },
 
     ColorColumn    = { bg = "NONE" },
     Conceal        = { bg = "NONE" },
-    Cursor         = { fg = c.bg, bg = c.fg },
-    CursorColumn   = { bg = c.overlay },
-    VirtColumn     = { fg = c.lighter },
-    CursorLine     = { bg = c.overlay },
-    CursorLineNr   = { fg = c.darkest },
-    Directory      = { fg = c.palette1 },
+    Cursor         = { fg = c.groups.ui.background, bg = c.groups.ui.foreground },
+    CursorColumn   = { bg = c.groups.ui.overlay },
+    VirtColumn     = { fg = c.groups.ui.border },
+    CursorLine     = { bg = c.groups.ui.overlay },
+    CursorLineNr   = { fg = c.groups.ui.strong },
+    Directory      = { fg = c.groups.accents.primary },
 
-    DiffAdd        = { bg = c.palette6, blend = 15 },
-    DiffChange     = { bg = c.palette4, blend = 15 },
-    DiffDelete     = { bg = c.palette5, blend = 15 },
-    DiffText       = { bg = c.palette4, blend = 20 },
+    DiffAdd        = { bg = c.groups.accents.green, blend = 15 },
+    DiffChange     = { bg = c.groups.accents.quaternary, blend = 15 },
+    DiffDelete     = { bg = c.groups.accents.rose, blend = 15 },
+    DiffText       = { bg = c.groups.accents.quaternary, blend = 20 },
 
-    EndOfBuffer    = { fg = c.bg },
+    EndOfBuffer    = { fg = c.groups.ui.background },
 
-    ErrorMsg       = { fg = c.danger },
-    FoldColumn     = { fg = c.mid },
-    Folded         = { fg = c.dark, bg = c.surface },
+    ErrorMsg       = { fg = c.groups.diagnostics.error },
+    FoldColumn     = { fg = c.groups.ui.subtle },
+    Folded         = { fg = c.groups.ui.text_muted, bg = c.groups.ui.surface },
 
     IncSearch      = { reverse = true },
     CurSearch      = { link = "IncSearch" },
-    Search         = { bg = c.palette4, blend = 25 },
-    Substitute     = { bg = c.palette1, blend = 25 },
+    Search         = { bg = c.groups.accents.quaternary, blend = 25 },
+    Substitute     = { bg = c.groups.accents.primary, blend = 25 },
 
-    LineNr         = { fg = c.light },
+    LineNr         = { fg = c.groups.ui.muted },
     LineNrAbove    = { link = "LineNr" },
     LineNrBelow    = { link = "LineNr" },
 
-    MatchParen     = { bg = c.palette3, blend = 20 },
+    MatchParen     = { bg = c.groups.accents.tertiary, blend = 20 },
 
-    ModeMsg        = { fg = c.dark },
-    MoreMsg        = { fg = c.palette1 },
-    MsgArea        = { fg = c.dark },
+    ModeMsg        = { fg = c.groups.ui.text_muted },
+    MoreMsg        = { fg = c.groups.accents.primary },
+    MsgArea        = { fg = c.groups.ui.text_muted },
 
-    NonText        = { fg = c.lighter },
-    Whitespace     = { fg = c.lighter },
+    NonText        = { fg = c.groups.ui.border },
+    Whitespace     = { fg = c.groups.ui.border },
 
-    Pmenu          = { fg = c.dark, bg = c.surface },
-    PmenuSel       = { fg = c.darkest, bg = c.overlay },
-    PmenuSbar      = { bg = c.overlay },
-    PmenuThumb     = { bg = c.lighter },
+    Pmenu          = { fg = c.groups.ui.text_muted, bg = c.groups.ui.surface },
+    PmenuSel       = { fg = c.groups.ui.strong, bg = c.groups.ui.overlay },
+    PmenuSbar      = { bg = c.groups.ui.overlay },
+    PmenuThumb     = { bg = c.groups.ui.border },
 
-    Question       = { fg = c.palette1 },
+    Question       = { fg = c.groups.accents.primary },
 
-    QuickFixLine   = { bg = c.overlay },
+    QuickFixLine   = { bg = c.groups.ui.overlay },
 
-    SignColumn     = { fg = c.darkest, bg = opts.transparent and "NONE" or c.bg },
+    SignColumn     = { fg = c.groups.ui.strong, bg = opts.transparent and "NONE" or c.groups.ui.background },
 
-    SpecialKey     = { fg = c.palette1 },
+    SpecialKey     = { fg = c.groups.accents.primary },
 
-    SpellBad       = { sp = c.danger, undercurl = true },
-    SpellCap       = { sp = c.warning, undercurl = true },
-    SpellLocal     = { sp = c.info, undercurl = true },
-    SpellRare      = { sp = c.hint, undercurl = true },
+    SpellBad       = { sp = c.groups.diagnostics.error, undercurl = true },
+    SpellCap       = { sp = c.groups.diagnostics.warning, undercurl = true },
+    SpellLocal     = { sp = c.groups.diagnostics.info, undercurl = true },
+    SpellRare      = { sp = c.groups.diagnostics.hint, undercurl = true },
 
-    StatusLine     = { fg = c.dark, bg = c.surface },
-    StatusLineNC   = { fg = c.lighter, bg = c.surface },
+    StatusLine     = { fg = c.groups.ui.text_muted, bg = c.groups.ui.surface },
+    StatusLineNC   = { fg = c.groups.ui.border, bg = c.groups.ui.surface },
 
-    TabLine        = { fg = c.mid, bg = c.surface },
-    TabLineFill    = { bg = c.surface },
-    TabLineSel     = { fg = c.darkest, bg = c.bg },
+    TabLine        = { fg = c.groups.ui.subtle, bg = c.groups.ui.surface },
+    TabLineFill    = { bg = c.groups.ui.surface },
+    TabLineSel     = { fg = c.groups.ui.strong, bg = c.groups.ui.background },
 
-    Title          = { fg = c.darkest },
+    Title          = { fg = c.groups.ui.strong },
 
-    VertSplit      = { fg = c.lighter },
+    VertSplit      = { fg = c.groups.ui.border },
 
-    Visual         = { bg = c.palette1, blend = 15 },
+    Visual         = { bg = c.groups.ui.selection, blend = 15 },
     VisualNOS      = { link = "Visual" },
 
-    WarningMsg     = { fg = c.warning },
+    WarningMsg     = { fg = c.groups.diagnostics.warning },
 
-    WildMenu       = { fg = c.darkest, bg = c.overlay },
+    WildMenu       = { fg = c.groups.ui.strong, bg = c.groups.ui.overlay },
 
-    WinBar         = { fg = c.dark, bg = c.surface },
-    WinBarNC       = { fg = c.lighter, bg = c.surface },
-    WinSeparator   = { fg = c.lighter },
+    WinBar         = { fg = c.groups.ui.text_muted, bg = c.groups.ui.surface },
+    WinBarNC       = { fg = c.groups.ui.border, bg = c.groups.ui.surface },
+    WinSeparator   = { fg = c.groups.ui.border },
   }
 end
 
